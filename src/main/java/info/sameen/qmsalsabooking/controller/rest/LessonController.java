@@ -44,7 +44,11 @@ public class LessonController {
 
     @RequestMapping(value = "/retrieve/{lessonId}", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
-    public Lesson get(@PathVariable long lessonId) {
+    public Lesson get(@PathVariable long lessonId) throws LessonNotFoundException {
+        Lesson foundLesson = lessonService.findById(lessonId);
+        if (foundLesson == null) {
+            throw new LessonNotFoundException("Lesson with '" + lessonId + "' does not exist.");
+        }
         return lessonService.findById(lessonId);
     }
 
@@ -61,7 +65,11 @@ public class LessonController {
 
     // Delete
     @RequestMapping(value = "/delete/{lessonId}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable long lessonId) {
+    public void delete(@PathVariable long lessonId) throws LessonNotFoundException {
+        Lesson foundLesson = lessonService.findById(lessonId);
+        if (foundLesson == null) {
+            throw new LessonNotFoundException("Lesson with '" + lessonId + "' does not exist.");
+        }
         lessonService.delete(lessonId);
     }
 }
