@@ -16,28 +16,46 @@ public class Lesson {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
-    private LocalTime dateTime;
+    private long id;
+    private String date;
+    private String time;
     private String venue;
     private String level;
-    private boolean isMembersOnly;
+    private String type;
 
     public Lesson() {
     }
 
-    public Lesson(LocalTime dateTime, String venue, String level, boolean isMembersOnly) {
-        this.dateTime = dateTime;
+    public Lesson(String date, String time, String venue, String level, String type) {
+        this.date = date;
+        this.time = time;
         this.venue = venue;
         this.level = level;
-        this.isMembersOnly = isMembersOnly;
+        this.type = type;
     }
 
-    public LocalTime getDateTime() {
-        return dateTime;
+    public long getId() {
+        return id;
     }
 
-    public void setDateTime(LocalTime dateTime) {
-        this.dateTime = dateTime;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public String getVenue() {
@@ -56,11 +74,11 @@ public class Lesson {
         this.level = level;
     }
 
-    public boolean isMembersOnly() {
-        return isMembersOnly;
+    public String getType() {
+        return type;
     }
 
-    public void setMembersOnly(boolean membersOnly) {
-        isMembersOnly = membersOnly;
+    public void setType(String type) {
+        this.type = type;
     }
 }

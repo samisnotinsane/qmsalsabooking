@@ -4,6 +4,7 @@ import info.sameen.qmsalsabooking.model.Attendee;
 import info.sameen.qmsalsabooking.model.Lesson;
 import info.sameen.qmsalsabooking.service.LessonService;
 import org.hibernate.cfg.NotYetImplementedException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,6 +19,11 @@ import java.util.List;
 public class LessonController {
 
     private LessonService lessonService;
+
+    @Autowired
+    public LessonController(LessonService lessonService) {
+        this.lessonService = lessonService;
+    }
 
     // Create
     @RequestMapping(value = "/create", method = RequestMethod.POST)
