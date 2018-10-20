@@ -12,5 +12,5 @@ import org.springframework.data.repository.CrudRepository;
  * @author sameenislam
  * @version 1.0
  */
-public interface LessonRepository extends CrudRepository<Lesson, String> {
+public interface LessonRepository extends CrudRepository<Lesson, Long> {
 }

@@ -39,7 +39,7 @@ public class LessonService {
         return lessons;
     }
 
-    public Lesson findById(String id) {
+    public Lesson findById(long id) {
         return lessonRepository.findById(id).orElse(null);
 
     }
@@ -51,7 +51,7 @@ public class LessonService {
     }
 
     // Delete
-    public void delete(String id) {
+    public void delete(long id) {
         lessonRepository.deleteById(id);
     }
 

@@ -38,7 +38,7 @@ public class LessonController {
     }
 
     @RequestMapping(value = "/retrieve/{lessonId}", method = RequestMethod.GET)
-    public Lesson get(@PathVariable String lessonId) {
+    public Lesson get(@PathVariable long lessonId) {
         return lessonService.findById(lessonId);
     }
 
