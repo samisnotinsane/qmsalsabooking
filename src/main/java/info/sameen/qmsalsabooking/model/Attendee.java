@@ -1,12 +1,21 @@
 package info.sameen.qmsalsabooking.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * A person attending a class.
  * @author sameenislam
  * @version 1.0
  */
+@Entity
 public class Attendee {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private String firstName;
     private String surname;
     private String gender;
@@ -22,6 +31,14 @@ public class Attendee {
         this.gender = gender;
         this.email = email;
         this.password = password;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getFirstName() {

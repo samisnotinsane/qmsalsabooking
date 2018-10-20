@@ -41,13 +41,11 @@ public class LessonService {
 
     public Lesson findById(long id) {
         return lessonRepository.findById(id).orElse(null);
-
     }
 
     // Update
-    public Lesson update(Lesson lesson) {
+    public void update(Lesson lesson) {
         lessonRepository.save(lesson);
-        return lesson;
     }
 
     // Delete
