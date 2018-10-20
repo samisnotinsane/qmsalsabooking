@@ -40,7 +40,14 @@ public class LessonService {
     }
 
     // Update
+    public Lesson update(Lesson lesson) {
+        lessonRepository.save(lesson);
+        return lesson;
+    }
 
     // Delete
+    public void delete(String id) {
+        lessonRepository.deleteById(id);
+    }
 
 }
