@@ -54,13 +54,14 @@ public class LessonController {
 
     // Update
     @RequestMapping(value = "/update/{lessonId}", method = RequestMethod.POST)
+    @ResponseStatus(value = HttpStatus.OK)
     public void update(@PathVariable long lessonId, @RequestBody Lesson lesson) throws LessonNotFoundException {
         Lesson foundLesson = lessonService.findById(lessonId);
         if (foundLesson == null) {
             throw new LessonNotFoundException("Lesson with '" + lessonId + "' does not exist.");
         }
         lesson.setId(lessonId);
-        lessonService.save(lesson);
+        lessonService.update(lesson);
     }
 
     // Delete
