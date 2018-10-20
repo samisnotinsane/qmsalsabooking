@@ -1,4 +1,4 @@
-package info.sameen.qmsalsabooking.beans;
+package info.sameen.qmsalsabooking.model;
 
 /**
  * A person attending a class.

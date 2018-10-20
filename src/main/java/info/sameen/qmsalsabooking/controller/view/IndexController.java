@@ -1,4 +1,4 @@
-package info.sameen.qmsalsabooking.controllers;
+package info.sameen.qmsalsabooking.controller.view;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
