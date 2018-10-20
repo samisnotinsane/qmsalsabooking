@@ -20,17 +20,19 @@ public class Attendee {
     private String surname;
     private String gender;
     private String level;
+    private String membership;
     private String email;
     private String password;
 
     public Attendee() {
     }
 
-    public Attendee(String firstName, String surname, String gender, String level, String email, String password) {
+    public Attendee(String firstName, String surname, String gender, String level, String membership, String email, String password) {
         this.firstName = firstName;
         this.surname = surname;
         this.gender = gender;
         this.level = level;
+        this.membership = membership;
         this.email = email;
         this.password = password;
     }
@@ -73,6 +75,14 @@ public class Attendee {
 
     public void setLevel(String level) {
         this.level = level;
+    }
+
+    public String getMembership() {
+        return membership;
+    }
+
+    public void setMembership(String membership) {
+        this.membership = membership;
     }
 
     public String getEmail() {
