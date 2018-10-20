@@ -2,6 +2,8 @@ package info.sameen.qmsalsabooking.controller.rest;
 
 import info.sameen.qmsalsabooking.model.Attendee;
 import info.sameen.qmsalsabooking.model.Lesson;
+import info.sameen.qmsalsabooking.service.LessonService;
+import org.hibernate.cfg.NotYetImplementedException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,33 +17,34 @@ import java.util.List;
 @RequestMapping(value = "/api/lesson")
 public class LessonController {
 
+    private LessonService lessonService;
+
     // Create
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public List<Lesson> create(@RequestBody Lesson lesson) {
-        // persist to db.
-        return null;
+    public void create(@RequestBody Lesson lesson) {
+        lessonService.save(lesson);
     }
 
     // Retrieve
     @RequestMapping(value = "/retrieve", method = RequestMethod.GET)
     public List<Lesson> get() {
-        return null;
+        return  lessonService.findAll();
     }
 
     @RequestMapping(value = "/retrieve/{lessonId}", method = RequestMethod.GET)
-    public Lesson get(@PathVariable int lessonId) {
-        return null;
+    public Lesson get(@PathVariable String lessonId) {
+        return lessonService.findById(lessonId);
     }
 
     // Update
     @RequestMapping(value = "/update/{lessonId}", method = RequestMethod.POST)
-    public Lesson update(@PathVariable int lessonId) {
-        return null;
+    public Lesson update(@PathVariable String lessonId) {
+        throw new NotYetImplementedException();
     }
 
     // Delete
     @RequestMapping(value = "/delete/{lessonId}", method = RequestMethod.DELETE)
-    public List<Lesson> delete(@PathVariable int lessonId) {
-        return null;
+    public void delete(@PathVariable String lessonId) {
+        lessonService.delete(lessonId);
     }
 }

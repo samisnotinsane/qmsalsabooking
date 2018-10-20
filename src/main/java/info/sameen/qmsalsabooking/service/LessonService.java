@@ -39,6 +39,11 @@ public class LessonService {
         return lessons;
     }
 
+    public Lesson findById(String id) {
+        return lessonRepository.findById(id).orElse(null);
+
+    }
+
     // Update
     public Lesson update(Lesson lesson) {
         lessonRepository.save(lesson);
