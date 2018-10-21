@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * Controller for the index page.
+ * Controller for the sign in and sign up page.
  * @author sameenislam
  * @version 1.0
  */
@@ -16,5 +16,10 @@ public class RegistrationController {
     public String register(Model model) {
         model.addAttribute("title", "QM Salsa Society");
         return "signup";
+    }
+
+    @GetMapping("/signin")
+    public String signin(Model model) {
+        return "signin";
     }
 }

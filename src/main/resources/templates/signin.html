@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!--Include CSS styling.-->
+<head th:replace="base :: head"></head>
+<body>
+<!--Include navbar.-->
+<div th:replace="base :: navbar"></div>
+
+<form action="" class="main-form needs-validation" novalidate>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+
+<!--Include js scripts.-->
+<div th:replace="base :: footer"></div>
+</body>
+</html>
+
