@@ -7,6 +7,10 @@
 <div th:replace="base :: navbar"></div>
 
 <!--Insert components here...-->
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
 
 <!--Include js scripts.-->
 <div th:replace="base :: footer"></div>
