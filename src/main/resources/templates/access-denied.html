@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!--Include CSS styling.-->
+<head th:replace="base :: head"></head>
+<body>
+<!--Include navbar.-->
+<div th:replace="base :: navbar"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Error 403</h1>
+            <p>Access Denied.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-primary" href="/" role="button">Go to homepage</a>
+        </div>
+    </div>
+</div>
+
+<!--Include js scripts.-->
+<div th:replace="base :: footer"></div>
+</body>
+</html>
