@@ -12,6 +12,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -23,6 +26,11 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+    /* Hint:
+     * For more on Spring Security authentication, consult the following
+     * tutorial: https://memorynotfound.com/spring-boot-spring-security-thymeleaf-form-login-example/
+     */
 
 //    @Autowired
 //    public void configureGlobal(AuthenticationManagerBuilder authBuilder) throws Exception {
@@ -40,13 +48,24 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Bean
     @Override
     public UserDetailsService userDetailsService() {
+        PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+        final User.UserBuilder userBuilder = User.builder().passwordEncoder(encoder::encode);
+
         UserDetails user =
-                User.withDefaultPasswordEncoder()
+                userBuilder
                     .username("user")
-                    .password("password")
+                    .password("user")
                     .roles("USER")
                     .build();
-        return new InMemoryUserDetailsManager(user);
+
+        UserDetails admin =
+                userBuilder
+                    .username("admin")
+                    .password("password")
+                    .roles("USER", "ADMIN")
+                    .build();
+
+        return new InMemoryUserDetailsManager(user, admin);
     }
 
     @Override
