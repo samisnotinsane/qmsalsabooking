@@ -6,11 +6,19 @@
 <!--Include navbar.-->
 <div th:replace="base :: navbar"></div>
 
-<!--Insert components here...-->
-<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-<form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Error 403</h1>
+            <p>Access Denied.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-primary" href="/" role="button">Go to homepage</a>
+        </div>
+    </div>
+</div>
 
 <!--Include js scripts.-->
 <div th:replace="base :: footer"></div>

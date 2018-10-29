@@ -30,7 +30,7 @@ public class LessonController {
 
     // Create
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.CREATED)
     public void create(@RequestBody Lesson lesson) {
         lessonService.save(lesson);
     }
@@ -54,7 +54,7 @@ public class LessonController {
 
     // Update
     @RequestMapping(value = "/update/{lessonId}", method = RequestMethod.POST)
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.ACCEPTED)
     public void update(@PathVariable long lessonId, @RequestBody Lesson lesson) throws LessonNotFoundException {
         Lesson foundLesson = lessonService.findById(lessonId);
         if (foundLesson == null) {
@@ -66,6 +66,7 @@ public class LessonController {
 
     // Delete
     @RequestMapping(value = "/delete/{lessonId}", method = RequestMethod.DELETE)
+    @ResponseStatus(value = HttpStatus.ACCEPTED)
     public void delete(@PathVariable long lessonId) throws LessonNotFoundException {
         Lesson foundLesson = lessonService.findById(lessonId);
         if (foundLesson == null) {

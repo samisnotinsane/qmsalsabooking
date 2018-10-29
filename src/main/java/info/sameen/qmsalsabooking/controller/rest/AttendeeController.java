@@ -30,7 +30,7 @@ public class AttendeeController {
 
     // Create
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.CREATED)
     public void create(@RequestBody Attendee attendee) {
         attendeeService.save(attendee);
     }
@@ -54,7 +54,7 @@ public class AttendeeController {
 
     // Update
     @RequestMapping(value = "/update/{attendeeId}", method = RequestMethod.POST)
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.ACCEPTED)
     public void update(@PathVariable long attendeeId, @RequestBody Attendee attendee) throws AttendeeNotFoundException {
         Attendee foundAttendee = attendeeService.findById(attendeeId);
         if (foundAttendee == null) {
@@ -66,7 +66,7 @@ public class AttendeeController {
 
     // Delete
     @RequestMapping(value = "/delete/{attendeeId}", method = RequestMethod.DELETE)
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.ACCEPTED)
     public void delete(@PathVariable long attendeeId) throws AttendeeNotFoundException {
         Attendee foundAttendee = attendeeService.findById(attendeeId);
         if (foundAttendee == null) {
