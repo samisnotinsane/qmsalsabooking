@@ -6,59 +6,60 @@
 <!--Include navbar.-->
 <div th:replace="base :: navbar"></div>
 
-<div class="row">
-    <div class="col-md-12">
-        <button type="button" class="btn btn-primary btn-sm" data-toggle="collapse"
-                data-target="#add-attendee-form-group" id="btn-add-lesson">
-            Add Lesson  <i class="fas fa-plus"></i>
-        </button>
-        <div class="collapse" id="add-attendee-form-group">
-            <div class="card card-body">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="collapse"
+                    data-target="#add-attendee-form-group" id="btn-add-lesson">
+                Add Lesson  <i class="fas fa-plus"></i>
+            </button>
+            <div class="collapse" id="add-attendee-form-group">
+                <div class="card card-body">
 
-                <form action="" class="main-form needs-validation" novalidate>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="date">Date</label>
-                                <input type="text" name="date" id="date" class="form-control" required>
+                    <form action="" class="main-form needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="date">Date</label>
+                                    <input type="text" name="date" id="date" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label for="time">Time</label>
+                                <input type="text" name="time" id="time" class="form-control" required>
                             </div>
                         </div>
-                        <div class="col">
-                            <label for="time">Time</label>
-                            <input type="text" name="time" id="time" class="form-control" required>
+                        <div class="form-group">
+                            <label for="venue">Venue</label>
+                            <input type="text" name="venue" id="venue" class="form-control" required>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="venue">Venue</label>
-                        <input type="text" name="venue" id="venue" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="level">Level</label>
-                        <select name="level" id="level" class="form-control">
-                            <option value="beginner">Beginner</option>
-                            <option value="improver">Improver</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Members only?</label>
-                        <input type="radio" name="membersOnlyYes" value="member-yes"> Yes
-                        <input type="radio" name="membersOnlyNo" value="member-no"> No
-                    </div>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-primary btn-sm" id="btn-save-lesson">
-                            Save
-                        </button>
-                    </div>
-                </form>
+                        <div class="form-group">
+                            <label for="level">Level</label>
+                            <select name="level" id="level" class="form-control">
+                                <option value="beginner">Beginner</option>
+                                <option value="improver">Improver</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Members only?</label>
+                            <input type="radio" name="membersOnlyYes" value="member-yes"> Yes
+                            <input type="radio" name="membersOnlyNo" value="member-no"> No
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary btn-lg btn-block" id="btn-save-lesson">
+                                Save
+                            </button>
+                        </div>
+                    </form>
 
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!--Insert components here...-->
-<table class="table table-striped">
-    <thead class="thread-light">
+    <!--Insert components here...-->
+    <table class="table table-striped">
+        <thead class="thread-light">
         <tr>
             <th scope="col">Date</th>
             <th scope="col">Time</th>
@@ -67,8 +68,8 @@
             <th scope="col">Open To</th>
             <th scope="col"></th>
         </tr>
-    </thead>
-    <tbody>
+        </thead>
+        <tbody>
         <tr>
             <td>18/10/2018</td>
             <td>6:30 pm</td>
@@ -93,8 +94,9 @@
             <td>Everyone</td>
             <td><a class="btn btn-primary" href="#" role="button">Attend</a></td>
         </tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
 
 
 <!--Include js scripts.-->

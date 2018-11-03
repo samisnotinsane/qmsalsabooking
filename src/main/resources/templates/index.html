@@ -12,18 +12,22 @@
 
 <!-- Only display to anonymous users. -->
 <div sec:authorize="isAnonymous()">
-    <h1>Hi!</h1>
-    <a class="btn btn-primary" th:href="@{/signin}">Sign in</a>
-    <br>
-    <a class="btn btn-secondary" th:href="@{/signup}">Sign up</a>
+    <div class="container">
+        <h1>Welcome!</h1>
+        <p>Sign in or sign up to continue.</p>
+        <a class="btn btn-primary btn-lg btn-block" th:href="@{/signin}">Sign in</a>
+        <a class="btn btn-secondary btn-lg btn-block" th:href="@{/signup}">Sign up</a>
+    </div>
 </div>
 
 <!-- Only display to authenticated users. -->
 <div sec:authorize="isAuthenticated()">
-    <h1 th:inline="text">Hello, [[${#httpServletRequest.remoteUser}]]!</h1>
-    <form th:action="@{/logout}" method="post" class="main-form needs-validation" novalidate>
-        <button class="btn btn-secondary" type="submit">Sign Out</button>
-    </form>
+    <div class="container">
+        <h1 th:inline="text">Hello, [[${#httpServletRequest.remoteUser}]]!</h1>
+        <form th:action="@{/logout}" method="post" class="main-form needs-validation" novalidate>
+            <button class="btn btn-secondary btn-lg btn-block" type="submit">Sign Out</button>
+        </form>
+    </div>
 </div>
 
 <!--Include js scripts.-->
