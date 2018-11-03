@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
 <!--Include CSS styling.-->
 <head th:replace="base :: head"></head>
 <body>
@@ -7,10 +8,23 @@
 <div th:replace="base :: navbar"></div>
 
 <!--Insert components here...-->
-<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-<form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
-</form>
+
+
+<!-- Only display to anonymous users. -->
+<div sec:authorize="isAnonymous()">
+    <h1>Hi!</h1>
+    <a class="btn btn-primary" th:href="@{/signin}">Sign in</a>
+    <br>
+    <a class="btn btn-secondary" th:href="@{/signup}">Sign up</a>
+</div>
+
+<!-- Only display to authenticated users. -->
+<div sec:authorize="isAuthenticated()">
+    <h1 th:inline="text">Hello, [[${#httpServletRequest.remoteUser}]]!</h1>
+    <form th:action="@{/logout}" method="post" class="main-form needs-validation" novalidate>
+        <button class="btn btn-secondary" type="submit">Sign Out</button>
+    </form>
+</div>
 
 <!--Include js scripts.-->
 <div th:replace="base :: footer"></div>
