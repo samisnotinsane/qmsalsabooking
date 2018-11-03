@@ -7,26 +7,27 @@
 <div th:replace="base :: navbar"></div>
 
 <!--Insert components here...-->
-<form action="" class="main-form needs-validation" novalidate>
-    <div class="row">
-        <div class="col">
-            <div class="form-group">
-                <input type="text" name="search-attendees" id="search-attendees" class="form-control" placeholder="Search names...">
-                <div class="invalid-feedback">Please enter a surname.</div>
+<div class="container">
+    <form action="" class="main-form needs-validation" novalidate>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" name="search-attendees" id="search-attendees" class="form-control" placeholder="Search names...">
+                    <div class="invalid-feedback">Please enter a surname.</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <button type="button" class="btn btn-default btn-sm" id="btn-search-attendee-names">
+                        Search  <i class="fas fa-search"></i>
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="col">
-            <div class="form-group">
-                <button type="button" class="btn btn-default btn-sm" id="btn-search-attendee-names">
-                    Search  <i class="fas fa-search"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-</form>
+    </form>
 
-<table class="table table-striped">
-    <thead class="thread-light">
+    <table class="table table-striped">
+        <thead class="thread-light">
         <tr>
             <th scope="col">Surname</th>
             <th scope="col">Firstname</th>
@@ -35,8 +36,8 @@
             <th scope="col">Approve</th>
             <th scope="col"></th>
         </tr>
-    </thead>
-    <tbody>
+        </thead>
+        <tbody>
         <tr>
             <td>ISLAM</td>
             <td>Sameen</td>
@@ -73,8 +74,9 @@
             </td>
             <td><a class="btn btn-danger" href="#" role="button">Remove</a></td>
         </tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
 
 <!--Include js scripts.-->
 <div th:replace="base :: footer"></div>
