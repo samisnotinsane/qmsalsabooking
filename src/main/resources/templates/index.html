@@ -77,6 +77,10 @@
         <div sec:authorize="isAuthenticated()">
             <div class="container">
                 <h1 th:inline="text">Hello, [[${#httpServletRequest.remoteUser}]]!</h1>
+
+                <p>Email: <span sec:authentication="name">Bob</span></p>
+                <p>Role: <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span></p>
+
                 <form th:action="@{/logout}" method="post" class="main-form needs-validation" novalidate>
                     <button class="btn btn-outline-danger btn-lg btn-block" type="submit">Sign Out</button>
                 </form>

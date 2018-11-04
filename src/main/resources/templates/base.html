@@ -17,7 +17,9 @@
 </head>
 <body>
 <nav th:fragment="navbar" class="navbar navbar-expand-sm navbar-light bg-light">
-    <a href="/" class="navbar-brand">QM Salsa Society</a>
+    <a th:href="@{/}" class="navbar-brand">
+        <img th:src="@{/img/qmsalsalogo.jpg}" width="40" height="40" alt="">
+    </a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,7 +43,7 @@
         <div sec:authorize="isAnonymous()">
             <a class="btn btn-primary"th:href="@{/signin}">Sign in</a>
         </div>
-        <div sec:authorize="isAuthenticated()">
+        <div sec:authorize="hasRole('ROLE_ADMIN')">
             <a class="btn btn-secondary"th:href="@{/dashboard}">Dashboard</a>
         </div>
     </div>

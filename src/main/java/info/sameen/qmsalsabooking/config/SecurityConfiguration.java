@@ -83,6 +83,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                                         "/css/**",
                                         "/img/**",
                                         "/signup*",
+                                        "/about-us*",
+                                        "/contact-us*",
                                         "/testpage*"
                     ).permitAll()
                     .antMatchers("/swagger-ui.html*").hasRole("ADMIN")
