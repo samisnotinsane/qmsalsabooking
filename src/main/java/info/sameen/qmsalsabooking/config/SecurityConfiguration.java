@@ -53,14 +53,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         UserDetails user =
                 userBuilder
-                    .username("user")
+                    .username("user@test.com")
                     .password("user")
                     .roles("USER")
                     .build();
 
         UserDetails admin =
                 userBuilder
-                    .username("admin")
+                    .username("admin@test.com")
                     .password("password")
                     .roles("USER", "ADMIN")
                     .build();

@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<!--Include CSS styling.-->
-<head th:replace="base :: head"></head>
-<body>
-<!--Include navbar.-->
-<div th:replace="base :: navbar"></div>
+    <!--Include CSS styling.-->
+    <head th:replace="base :: head"></head>
+    <!-- Custom CSS Styling -->
+    <link th:href="@{/css/signin.css}" rel="stylesheet">
+    <body class="text-center">
 
-<div class="container">
-    <form th:action="@{/signin}" method="post" class="main-form needs-validation" novalidate>
-        <div class="form-group">
-            <label for="username">Email</label>
-            <input type="text" id="username" name="username" class="form-control"/>
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control">
-        </div>
-
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-
-        <div th:if="${param.error}">
-            <div class="alert alert-danger">
-                Invalid username or password.
+        <form method="post" th:action="@{/signin}" class="form-signin">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+            <img class="mb-4" th:src="@{/img/qmsalsalogo.jpg}" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="text" name="username" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
             </div>
-        </div>
-        <div th:if="${param.logout}">
-            <div class="alert alert-info">
-                You have been logged out.
+            <div th:if="${param.error}">
+                <div class="alert alert-danger">
+                    Invalid username or password.
+                </div>
             </div>
-        </div>
+            <div th:if="${param.logout}">
+                <div class="alert alert-info">
+                    You have been logged out.
+                </div>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <a role="button" class="btn btn-link" th:href="@{/}">Return to homepage</a>
+            <p class="mt-5 mb-3 text-muted">&copy; 2018</p>
+        </form>
 
-        <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
-    </form>
-</div>
-
-<!--Include js scripts.-->
-<div th:replace="base :: footer"></div>
-</body>
+    <!--Include js scripts.-->
+    <div th:replace="base :: footer"></div>
+    </body>
 </html>
 
