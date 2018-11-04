@@ -17,4 +17,9 @@ public class IndexController {
         model.addAttribute("title", "QM Salsa Booking");
         return "index";
     }
+
+    @GetMapping("/testpage")
+    public String test(Model model) {
+        return "testpage";
+    }
 }
