@@ -42,11 +42,11 @@ You should now be greeted with the welcome page.
 The system presently supports two different logins which you may use for signing in:
 
 ````
-email: user
+email: user@test.com
 password: user
 
 
-email: admin
+email: admin@test.com
 password: password
 ````
 To exit the application, switch back to the terminal and press ````Ctrl+C````.
