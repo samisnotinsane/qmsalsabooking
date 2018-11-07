@@ -23,17 +23,19 @@ public class Lesson {
     private String venue;
     private String level;
     private String type;
+    private double price;
 
     public Lesson() {
     }
 
-    public Lesson(String date, String startTime, String endTime, String venue, String level, String type) {
+    public Lesson(String date, String startTime, String endTime, String venue, String level, String type, double price) {
         this.date = date;
         this.startTime = startTime;
         this.endTime = endTime;
         this.venue = venue;
         this.level = level;
         this.type = type;
+        this.price = price;
     }
 
     public long getId() {
@@ -90,5 +92,13 @@ public class Lesson {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
