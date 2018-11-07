@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
 <!--Include CSS styling.-->
 <head th:replace="base :: head"></head>
 <body>
@@ -7,15 +8,41 @@
 <div th:replace="base :: navbar"></div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <button type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="collapse"
-                    data-target="#add-attendee-form-group" id="btn-add-lesson">
-                Add Lesson  <i class="fas fa-plus"></i>
-            </button>
+
+    <!--Add lesson drop-down form-->
+    <div class="row justify-content-md-center align-items-center">
+
+        <div class="col-lg-4">
+
+        </div> <!-- end col -->
+
+        <div class="col-lg-4">
+
+            <!-- for admin only -->
+            <div sec:authorize="hasRole('ROLE_ADMIN')">
+                <button type="button" class="btn btn-outline-primary" data-toggle="collapse"
+                        data-target="#add-attendee-form-group" id="btn-add-lesson">
+                    Add Lesson  <i class="fas fa-plus"></i>
+                </button> <!-- end button -->
+            </div> <!-- end admin only -->
+
+        </div> <!-- end col -->
+
+        <div class="col-lg-4">
+
+        </div> <!-- end col -->
+
+    </div> <!-- end row -->
+
+    <div class="row justify-content-md-center align-items-center">
+
+        <div class="col-lg-4">
+
+        </div> <!-- end col -->
+
+        <div class="col-lg-4">
             <div class="collapse" id="add-attendee-form-group">
                 <div class="card card-body">
-
                     <form action="" class="main-form needs-validation" novalidate>
                         <div class="row">
                             <div class="col">
@@ -51,52 +78,128 @@
                             </button>
                         </div>
                     </form>
+                </div> <!-- end card -->
+            </div> <!-- end collapse -->
+        </div> <!-- end col -->
 
-                </div>
+        <div class="col-lg-4">
+
+        </div> <!-- end col -->
+
+    </div> <!-- end row -->
+
+    <div class="container">
+
+        <!-- row 1 -->
+        <div class="row justify-content-md-center align-items-center">
+            <div class="col col-lg-2">
+                <p>15/11/2018</p>
             </div>
-        </div>
-    </div>
+            <div class="col-lg-8">
+                <!--Card 1-->
+                <a href="#">
+                    <div class="card bg-info text-white text-center p-1" >
+                        <div class="card-body">
 
-    <!--Insert components here...-->
-    <table class="table table-striped">
-        <thead class="thread-light">
-        <tr>
-            <th scope="col">Date</th>
-            <th scope="col">Time</th>
-            <th scope="col">Level</th>
-            <th scope="col">Venue</th>
-            <th scope="col">Open To</th>
-            <th scope="col"></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>18/10/2018</td>
-            <td>6:30 pm</td>
-            <td>Beginner</td>
-            <td>Active Studio</td>
-            <td>Everyone</td>
-            <td><a class="btn btn-primary" href="#" role="button">Attend</a></td>
-        </tr>
-        <tr>
-            <td>20/10/2018</td>
-            <td>7:30 pm</td>
-            <td>Intermediate</td>
-            <td>Arts Two LT</td>
-            <td>Members Only</td>
-            <td><a class="btn btn-primary" href="#" role="button">Attend</a></td>
-        </tr>
-        <tr>
-            <td>22/10/2018</td>
-            <td>6:30 pm</td>
-            <td>Beginner</td>
-            <td>Active Studio</td>
-            <td>Everyone</td>
-            <td><a class="btn btn-primary" href="#" role="button">Attend</a></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+                            <div class="row align-items-start">
+                                <div class="col">
+                                    <i class="far fa-clock"></i>
+                                </div>
+                                <div class="col">
+                                    <p>6:30 PM - 7:30 PM</p>
+                                </div>
+                                <div class="col">
+                                    <span class="badge badge-light">Beginners</span>
+                                    <span class="badge badge-light">£7.00</span>
+                                    <span class="badge badge-light">Everyone</span>
+                                </div>
+                            </div> <!-- end row -->
+
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card -->
+                </a>
+            </div>
+            <div class="col col-lg-2">
+
+            </div>
+        </div> <!-- end row 1 -->
+
+        <br>
+
+        <!-- row 2 -->
+        <div class="row align-items-center">
+            <div class="col col-lg-2">
+                <p>20/11/2018</p>
+            </div>
+            <div class="col-lg-8">
+                <!--Card 2-->
+                <a href="#">
+                    <div class="card bg-info text-white text-center p-1" >
+                        <div class="card-body">
+
+                            <div class="row align-items-start">
+                                <div class="col">
+                                    <i class="far fa-clock"></i>
+                                </div>
+                                <div class="col">
+                                    <p>7:30 PM - 8:30 PM</p>
+                                </div>
+                                <div class="col">
+                                    <span class="badge badge-light">Improvers</span>
+                                    <span class="badge badge-light">£5.00</span>
+                                    <span class="badge badge-light">Members</span>
+                                </div>
+                            </div> <!-- end row -->
+
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card -->
+                </a>
+            </div>
+            <div class="col col-lg-2">
+
+            </div>
+        </div> <!-- end row 2 -->
+
+        <br>
+
+        <!-- row 3 -->
+        <div class="row align-items-center">
+            <div class="col col-lg-2">
+                <p>22/11/2018</p>
+            </div>
+            <div class="col-lg-8">
+                <!--Card 3-->
+                <a href="#">
+                    <div class="card bg-info text-white text-center p-1" >
+                        <div class="card-body">
+
+                            <div class="row align-items-start">
+                                <div class="col">
+                                    <i class="far fa-clock"></i>
+                                </div>
+                                <div class="col">
+                                    <p>6:30 PM - 7:30 PM</p>
+                                </div>
+                                <div class="col">
+                                    <span class="badge badge-light">Beginners</span>
+                                    <span class="badge badge-light">£7.00</span>
+                                    <span class="badge badge-light">Everyone</span>
+                                </div>
+                            </div> <!-- end row -->
+
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card -->
+                </a>
+            </div>
+            <div class="col col-lg-2">
+
+            </div>
+        </div> <!-- end row 3 -->
+
+
+    </div> <!-- end container -->
+
+</div> <!-- end container -->
 
 
 <!--Include js scripts.-->

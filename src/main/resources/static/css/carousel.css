@@ -27,6 +27,11 @@ body {
     height: 32rem;
     background-color: #777;
 }
+/* Set a height on the carousel item */
+/*.carousel-inner > .item {*/
+    /*height: 400px;*/
+    /*width: 200px;*/
+/*}*/
 .carousel-item > img {
     position: absolute;
     top: 0;
