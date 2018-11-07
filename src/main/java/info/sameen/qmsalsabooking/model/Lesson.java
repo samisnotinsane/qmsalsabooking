@@ -18,7 +18,8 @@ public class Lesson {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String date;
-    private String time;
+    private String startTime;
+    private String endTime;
     private String venue;
     private String level;
     private String type;
@@ -26,9 +27,10 @@ public class Lesson {
     public Lesson() {
     }
 
-    public Lesson(String date, String time, String venue, String level, String type) {
+    public Lesson(String date, String startTime, String endTime, String venue, String level, String type) {
         this.date = date;
-        this.time = time;
+        this.startTime = startTime;
+        this.endTime = endTime;
         this.venue = venue;
         this.level = level;
         this.type = type;
@@ -50,12 +52,20 @@ public class Lesson {
         this.date = date;
     }
 
-    public String getTime() {
-        return time;
+    public String getStartTime() {
+        return startTime;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
     public String getVenue() {

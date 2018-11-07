@@ -44,10 +44,10 @@
             <a class="btn btn-primary"th:href="@{/signin}">Sign in</a>
         </div>
         <div sec:authorize="hasRole('ROLE_ADMIN')">
-            <a class="btn btn-secondary" th:href="@{/dashboard}">Dashboard</a>
+            <a class="btn btn-secondary" th:href="@{/dashboard}"><i class="fas fa-toolbox"></i></a>
         </div>
         <div sec:authorize="isAuthenticated()">
-            <a class="btn btn-danger" th:href="@{/logout}">Sign out</a>
+            <a class="btn btn-danger" th:href="@{/logout}"><i class="fas fa-sign-out-alt"></i></a>
         </div>
     </div>
 </nav>
