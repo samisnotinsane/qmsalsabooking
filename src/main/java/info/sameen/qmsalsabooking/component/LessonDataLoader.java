@@ -25,7 +25,7 @@ public class LessonDataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        logger.info("Loading dummy lessons data");
+        logger.info("Loading lessons data");
 
         lessonRepository.save(
                 new Lesson(
