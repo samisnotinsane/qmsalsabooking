@@ -88,12 +88,13 @@
 
     </div> <!-- end row -->
 
+    <!-- cards container -->
     <div class="container">
 
         <!-- row 1 -->
         <div class="row justify-content-md-center align-items-center">
             <div class="col col-lg-2">
-                <p>15/11/2018</p>
+                <p class="lesson-date">15/11/2017</p>
             </div>
             <div class="col-lg-8">
                 <!--Card 1-->
@@ -106,12 +107,12 @@
                                     <i class="far fa-clock"></i>
                                 </div>
                                 <div class="col">
-                                    <p>6:30 PM - 7:30 PM</p>
+                                    <p class="lesson-time">6:30 PM - 7:30 PM</p>
                                 </div>
                                 <div class="col">
-                                    <span class="badge badge-light">Beginners</span>
-                                    <span class="badge badge-light">£7.00</span>
-                                    <span class="badge badge-light">Everyone</span>
+                                    <span class="badge badge-light lesson-level">Beginners</span>
+                                    <span class="badge badge-light lesson-price">£7.00</span>
+                                    <span class="badge badge-light lesson-type">Everyone</span>
                                 </div>
                             </div> <!-- end row -->
 
@@ -129,7 +130,7 @@
         <!-- row 2 -->
         <div class="row align-items-center">
             <div class="col col-lg-2">
-                <p>20/11/2018</p>
+                <p class="lesson-date">20/11/2017</p>
             </div>
             <div class="col-lg-8">
                 <!--Card 2-->
@@ -142,12 +143,12 @@
                                     <i class="far fa-clock"></i>
                                 </div>
                                 <div class="col">
-                                    <p>7:30 PM - 8:30 PM</p>
+                                    <p class="lesson-time">7:30 PM - 8:30 PM</p>
                                 </div>
                                 <div class="col">
-                                    <span class="badge badge-light">Improvers</span>
-                                    <span class="badge badge-light">£5.00</span>
-                                    <span class="badge badge-light">Members</span>
+                                    <span class="badge badge-light lesson-level">Improvers</span>
+                                    <span class="badge badge-light lesson-price">£5.00</span>
+                                    <span class="badge badge-light lesson-type">Members</span>
                                 </div>
                             </div> <!-- end row -->
 
@@ -165,7 +166,7 @@
         <!-- row 3 -->
         <div class="row align-items-center">
             <div class="col col-lg-2">
-                <p>22/11/2018</p>
+                <p class="lesson-date">22/11/2017</p>
             </div>
             <div class="col-lg-8">
                 <!--Card 3-->
@@ -178,12 +179,12 @@
                                     <i class="far fa-clock"></i>
                                 </div>
                                 <div class="col">
-                                    <p>6:30 PM - 7:30 PM</p>
+                                    <p class="lesson-time">6:30 PM - 7:30 PM</p>
                                 </div>
                                 <div class="col">
-                                    <span class="badge badge-light">Beginners</span>
-                                    <span class="badge badge-light">£7.00</span>
-                                    <span class="badge badge-light">Everyone</span>
+                                    <span class="badge badge-light lesson-level">Beginners</span>
+                                    <span class="badge badge-light lesson-price">£7.00</span>
+                                    <span class="badge badge-light lesson-type">Everyone</span>
                                 </div>
                             </div> <!-- end row -->
 
@@ -201,8 +202,8 @@
 
 </div> <!-- end container -->
 
-
 <!--Include js scripts.-->
 <div th:replace="base :: footer"></div>
+<script th:src="@{/js/lessons.js}"></script>
 </body>
 </html>
