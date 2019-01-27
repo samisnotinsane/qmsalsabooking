@@ -39,6 +39,10 @@ public class AttendeeService {
         return attendees;
     }
 
+    public Attendee findBySurnameAndFirstName(String surname, String firstname) {
+        return attendeeRepository.findBySurnameAndFirstName(surname, firstname);
+    }
+
     public Attendee findById(long id) {
         return attendeeRepository.findById(id).orElse(null);
     }

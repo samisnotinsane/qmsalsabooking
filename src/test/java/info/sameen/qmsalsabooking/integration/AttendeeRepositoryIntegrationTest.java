@@ -9,7 +9,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Created by sameen on 2019-01-27.
@@ -34,8 +34,8 @@ public class AttendeeRepositoryIntegrationTest {
         Attendee found = attendeeRepository.findBySurnameAndFirstName(carolina.getSurname(), carolina.getSurname());
 
         // then
-        assertEquals(carolina, found);
-
+        assertThat(found.getFirstName())
+                .isEqualTo(carolina.getFirstName());
     }
 
 }
