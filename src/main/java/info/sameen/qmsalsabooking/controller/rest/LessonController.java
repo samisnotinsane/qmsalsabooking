@@ -7,6 +7,7 @@ import info.sameen.qmsalsabooking.service.LessonService;
 import org.hibernate.cfg.NotYetImplementedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,9 +30,10 @@ public class LessonController {
     }
 
     // Create
-    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/create", method = RequestMethod.POST,
+            consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @ResponseStatus(value = HttpStatus.CREATED)
-    public void create(@RequestBody Lesson lesson) {
+    public void create(Lesson lesson) {
         lessonService.save(lesson);
     }
 

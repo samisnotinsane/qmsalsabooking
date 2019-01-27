@@ -43,7 +43,8 @@
         <div class="col-lg-4">
             <div class="collapse" id="add-attendee-form-group">
                 <div class="card card-body">
-                    <form action="" class="main-form needs-validation" novalidate>
+                    <!-- form: add lesson -->
+                    <form id="form-add-lesson" action="/api/lesson/create" class="main-form needs-validation" novalidate>
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
@@ -69,15 +70,15 @@
                         </div>
                         <div class="form-group">
                             <label>Members only?</label>
-                            <input type="radio" name="membersOnlyYes" value="member-yes"> Yes
-                            <input type="radio" name="membersOnlyNo" value="member-no"> No
+                            <input type="radio" name="membersOnlyYes" id="radio-yes" value="member-yes"> Yes
+                            <input type="radio" name="membersOnlyNo" id="radio-no" value="member-no"> No
                         </div>
                         <div class="form-group">
-                            <button type="button" class="btn btn-primary btn-lg btn-block" id="btn-save-lesson">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block" id="btn-save-lesson">
                                 Save
                             </button>
                         </div>
-                    </form>
+                    </form> <!-- end form-->
                 </div> <!-- end card -->
             </div> <!-- end collapse -->
         </div> <!-- end col -->

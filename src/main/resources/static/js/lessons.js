@@ -69,3 +69,31 @@ $(document).ready(function() {
     });
 
 });
+
+// Attach 'submit' handler to form.
+$( "#form-add-lesson" ).submit(function (event) {
+
+    event.preventDefault(); // stop form from submitting normally.
+
+    /* Get the action attribute from the <form action=""> element */
+    var $form = $( this ),
+        url = $form.attr( "action" );
+
+    /* Send the data using POST */
+    var posting = $.post( url, {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        date: $( '#date' ).val(),
+        startTime: $( '#time' ).val(),
+        venue: $( '#venue' ).val(),
+        level: $( '#level' ).val(),
+        type: "Everyone"
+    });
+
+    posting.done(function ( data ) {
+        alert( 'Lesson created.' );
+    });
+
+});
