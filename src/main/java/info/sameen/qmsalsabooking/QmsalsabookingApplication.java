@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
-@Import({SecurityConfiguration.class})
+//@Import({SecurityConfiguration.class})
 public class QmsalsabookingApplication {
 
     public static void main(String[] args) {
