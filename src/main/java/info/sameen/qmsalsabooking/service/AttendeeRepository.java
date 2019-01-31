@@ -13,4 +13,5 @@ import org.springframework.data.repository.CrudRepository;
  * @version 1.0
  */
 public interface AttendeeRepository extends CrudRepository<Attendee, Long> {
+    Attendee findBySurnameAndFirstName(String surname, String firstname);
 }
