@@ -1,9 +1,6 @@
 package info.sameen.qmsalsabooking.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * A person attending a class.
@@ -11,10 +8,11 @@ import javax.persistence.Id;
  * @version 1.0
  */
 @Entity
+@Table(name="attendee")
 public class Attendee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private long id;
     private String firstName;
     private String surname;

@@ -48,7 +48,7 @@ public class AttendeeServiceIntegrationTest {
     @Test
     public void whenValidName_thenAttendeeShouldBeFound() {
         String firstName = "Carolina";
-        String surname = "Soars";
+        String surname = "Soares";
         Attendee found = attendeeService.findBySurnameAndFirstName(surname, firstName);
 
         assertThat(found.getFirstName())

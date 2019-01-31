@@ -29,9 +29,11 @@ public class AttendeeRepositoryIntegrationTest {
         // given
         Attendee carolina = new Attendee("Carolina", "Soares", "female", "improver",
                 "member", "carolina.soars@qmul.ac.uk", "fakepassword123");
+        entityManager.persist(carolina);
+        entityManager.flush();
 
         // when
-        Attendee found = attendeeRepository.findBySurnameAndFirstName(carolina.getSurname(), carolina.getSurname());
+        Attendee found = attendeeRepository.findBySurnameAndFirstName(carolina.getSurname(), carolina.getFirstName());
 
         // then
         assertThat(found.getFirstName())
